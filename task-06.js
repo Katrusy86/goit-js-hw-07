@@ -1,15 +1,13 @@
 'use strict'
 
-const inputField = document.querySelector('#validation-input');
-
-inputField.addEventListener("focus", (event) => {
-    event.preventDefault();
-    console.log(inputField.value.length)
-    if(inputField.getAttribute('data-length') > inputField.value.length ){
-        inputField.classList.add('.valid');
-        inputField.classList.remove('.invalid');
+const input = document.querySelector('#validation-input')
+input.onblur = function(){
+    console.log(this.value.length);
+    if(this.getAttribute('data-length') >= this.value.length ){
+        this.classList.add('valid');
+        this.classList.remove('invalid');
     } else {
-    inputField.classList.add('.invalid');
-    inputField.classList.remove('.valid');
+        this.classList.add('invalid');
+        this.classList.remove('valid');
     }
-});
+};
