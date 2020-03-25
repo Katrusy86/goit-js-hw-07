@@ -3,7 +3,7 @@
 const input = document.querySelector("#name-input");
 const span = document.querySelector("#name-output");
 
-function nameInp() {
+function nameInp(event) {
 
     if (event.target.value === ''){
         span.textContent = 'незнакомец'
