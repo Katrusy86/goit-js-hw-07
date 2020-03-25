@@ -1,7 +1,8 @@
 'use strict'
 
 const input = document.querySelector('#validation-input')
-input.onblur = function(){
+
+function validation(){
     console.log(this.value.length);
     if(this.getAttribute('data-length') >= this.value.length ){
         this.classList.add('valid');
@@ -10,4 +11,6 @@ input.onblur = function(){
         this.classList.add('invalid');
         this.classList.remove('valid');
     }
-};
+}
+
+input.addEventListener("blur", validation);

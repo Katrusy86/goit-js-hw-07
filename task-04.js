@@ -7,12 +7,15 @@ const myCounterValue = document.querySelector('#value');
 const counterMinBtn = document.querySelector('button[data-action="decrement"]')
 const counterPlusBtn = document.querySelector('button[data-action="increment"]')
 
-counterMinBtn.addEventListener('click', (decrement) => {
+function decrement (){
     counterValue -= 1;
     myCounterValue.textContent = counterValue;
-})
+}
 
-counterPlusBtn.addEventListener('click', (increment) =>{
+function increment (){
     counterValue += 1;
     myCounterValue.textContent = counterValue;
-})
+}
+
+counterMinBtn.addEventListener('click', decrement)
+counterPlusBtn.addEventListener('click', increment)
